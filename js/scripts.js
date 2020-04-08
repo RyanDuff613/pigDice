@@ -1,28 +1,20 @@
 //Back End
 // back end logic for game
+function dieRoll(){
+  return Math.floor(Math.random()*6) +1;
+ };
+
 function Game(){
   this.players = [];
   this.currentId = 0;
 }
-
-function dieRoll(){
- return Math.floor(Math.random()*6) +1;
-};
-
 
 Game.prototype.addPlayer = function(player){
   player.playerId = this.assignId();
   this.players.push(player);
 }
 
-Game.prototype.assignId=function(){
-  this.currentId +=1;
-  return this.currentId;
-}
 
-Game.prototype.addPlayerScore = function(playerScore){
-  this.playerScores.push(playerScore);
-}
 
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
@@ -37,7 +29,6 @@ function Player(name) {
   this.totalScore = 0;
 }
 
-
 Player.prototype.turn = function(player){
     var turnScore;
     var rollScore = dieRoll();
@@ -45,9 +36,10 @@ Player.prototype.turn = function(player){
       turnScore = 0;
       // prompt next player to roll
     } else {
-      this.turnScore += rollScore;
+      turnScore += rollScore;
       // ask player to hold or roll again
     }
+    this.totalScore += turnScore;
 }
 
 Player.prototype.hold = function(){
