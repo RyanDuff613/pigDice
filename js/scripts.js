@@ -1,17 +1,22 @@
 //Back End
 // back end logic for game
 function Game(){
-  this.playerNames = [];
-  this.playerScores =[];
-  this.playerID = [];
+  this.players = [];
+  this.currentId = 0;
 }
 
 function dieRoll(){
  return Math.floor(Math.random()*6) +1;
 };
 
+Game.prototype.assignID = function(){
+  this.currentId +=1;
+  return this.currentId;
+}
+
 Game.prototype.addPlayer = function(player){
-  this.playerNames.push(player);
+  player.playerId = this.assignId();
+  this.players.push(player);
 }
 
 Game.prototype.addPlayerScore = function(playerScore){
@@ -27,7 +32,7 @@ Game.prototype.compareScores = function(){
 //back end logic for players
 function Player(name) {
   this.playerName = name;
-  this.currentId = 0;
+  this.playerId = 0;
   this.totalScore = 0;
 }
 
