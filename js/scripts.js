@@ -9,14 +9,15 @@ function dieRoll(){
  return Math.floor(Math.random()*6) +1;
 };
 
-Game.prototype.assignID = function(){
-  this.currentId +=1;
-  return this.currentId;
-}
 
 Game.prototype.addPlayer = function(player){
   player.playerId = this.assignId();
   this.players.push(player);
+}
+
+Game.prototype.assignId=function(){
+  this.currentId +=1;
+  return this.currentId;
 }
 
 Game.prototype.addPlayerScore = function(playerScore){
