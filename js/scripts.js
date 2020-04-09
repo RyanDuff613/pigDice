@@ -30,12 +30,11 @@ Game.prototype.roll = function(){
     this.turnScore += rollScore;
     $('#roll').text('roll again?');
   }
-  //this.players.playerId/* [#] */.totalScore += this.turnScore;
 }
 
 Game.prototype.hold = function(){
   this.players[0].totalScore += this.turnScore
-  console.log(this.players[0].totalScore);
+  console.log('player[0] totalScore is ' + this.players[0].totalScore);
 }
 
 Game.prototype.compareScores = function(){
