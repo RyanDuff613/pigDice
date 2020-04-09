@@ -36,6 +36,7 @@ Game.prototype.roll = function(){
 Game.prototype.hold = function(playerArrayAddress){
   this.players[playerArrayAddress].totalScore += this.turnScore;
   this.turnScore = 0;
+  this.endGame();
   this.switchTurn();
 }
 
@@ -48,6 +49,15 @@ Game.prototype.switchTurn= function(){
   }
   this.turnScore = 0;
   $('#roll').text(this.players[this.whoseTurn].playerName + "'s roll");
+}
+
+Game.prototype.endGame= function(){
+  if(this.players[0].totalScore >= 100){
+    alert(this.players[0].playerName + 'is the winner!');
+  }else if(this.players[1].totalScore >=100){
+    alert(this.players[1].playerName + 'is the winner!');
+  } else{
+  }
 }
 
 //back end logic for players
