@@ -22,17 +22,18 @@ Game.prototype.assignId =function(){
 
 Game.prototype.roll = function(){
   var rollScore = dieRoll();
+  console.log(rollScore);
   if (rollScore === 1){ 
     this.turnScore = 0;
-    //console.log(turnScore);
+    console.log(this.turnScore);
     // prompt next player to roll
   } else {
     this.turnScore += rollScore;
-    //console.log(turnScore);
+    console.log(this.turnScore);
     $('#roll').text('roll again?');
   }
-  this.totalScore += turnScore;
-  game.compareScores();
+  this.totalScore += this.turnScore;
+  this.compareScores();
 }
 
 Game.prototype.compareScores = function(){
