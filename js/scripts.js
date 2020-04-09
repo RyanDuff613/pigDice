@@ -56,8 +56,18 @@ Player.prototype.restart = function(){
 
 // Front End
 $(document).ready(function(){
-  $("").submit(function(event) {
+  $("#enterNames").submit(function(event) {
     event.preventDefault();
+    var game = new Game;
+    var player1name = $('#player1').val();
+    var player2name = $('#player2').val();
+    var player1 = new Player(player1name);
+    var player2 = new Player(player2name);
+    game.addPlayer(player1);
+    game.addPlayer(player2);
+    console.log(game);
+    console.log(player1);
+    console.log(player2);
   })
 });
 
