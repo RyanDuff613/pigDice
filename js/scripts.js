@@ -34,8 +34,8 @@ Game.prototype.roll = function(){
   }
 }
 
-Game.prototype.hold = function(player){
-  if(this.whoseTurn = player){
+Game.prototype.hold = function(playerArrayAddress){
+  if(this.whoseTurn = playerArrayAddress){
     this.players[this.whoseTurn].totalScore += this.turnScore;
     this.switchTurn();
   } else {
@@ -48,8 +48,10 @@ Game.prototype.hold = function(player){
 Game.prototype.switchTurn= function(){
   if (this.whoseTurn === 0){
     this.whoseTurn = 1;
+    this.turnScore = 0;
   }else {
     this.whoseTurn = 0;
+    this.turnScore = 0;
   }
 }
 
