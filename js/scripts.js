@@ -86,7 +86,6 @@ $(document).ready(function(){
     $('#roll').click(function(){
       game.roll();
       $('#turnPoints').text(game.turnScore);
-      //console.log(game);
     });
 
     $('#hold').click(function(){
@@ -96,8 +95,8 @@ $(document).ready(function(){
       $('#player1totalScore').text(player1.totalScore);
       $('#player2totalScore').text(player2.totalScore);
       $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
-      //console.log(game);
     });
+    
   })
 });
 

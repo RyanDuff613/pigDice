@@ -28,21 +28,23 @@
       <div class="row">
         <div id='gamePanel'>
           <div class="output" id='player1output'>
-            <p>Scoring for player 1: <span id='player1name'></span></p>
-            <p>current score:<span id='player1totalScore'></span></p>
+            <p><span id='player1name'></span></p>
+            <p>total score:<span id='player1totalScore'></span></p>
           </div>
           <div class='output'>
-            <p>Scoring for player 2: <span id="player2name"></span></p>
-            <p>current score:<span id='player2totalScore'></span></p>
+            <p><span id="player2name"></span></p>
+            <p>total score:<span id='player2totalScore'></span></p>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <p>total points on this turn: <span id="turnPoints"></span></p>
-        <p>you rolled: <span id='diceRoll'></span></span></p>
-        <button id='roll' type='submit'>dice</button>
-        <button id='hold' type='submit'>hold</button>
+        <div id="rollPanel">
+          <p>total points on this turn: <span id="turnPoints"></span></p>
+          <p>last roll: <span id='diceRoll'></span></span></p>
+          <button id='roll' type='submit'>dice</button>
+          <button id='hold' type='submit'>hold</button>
+        </div>
       </div>
           
     </div>
