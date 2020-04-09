@@ -23,6 +23,7 @@ Game.prototype.assignId =function(){
 
 Game.prototype.roll = function(){
   var rollScore = dieRoll();
+  $('#diceRoll').text(rollScore);
   console.log('the dice rolled:'+ rollScore);
   if (rollScore === 1){ 
     this.turnScore = 0;
@@ -53,6 +54,7 @@ Game.prototype.hold = function(playerArrayAddress){
 Game.prototype.switchTurn= function(){
   if (this.whoseTurn === 0){
     this.whoseTurn = 1;
+    $('#diceRoll').text('');
   }else {
     this.whoseTurn = 0; 
   }
@@ -92,6 +94,7 @@ $(document).ready(function(){
     $('#hold').click(function(){
       game.hold(game.whoseTurn);
       $('#turnPoints').text(game.turnScore);
+      $('#diceRoll').text('');
       $('#player1totalScore').text(player1.totalScore);
       $('#player2totalScore').text(player2.totalScore);
       $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
