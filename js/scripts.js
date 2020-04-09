@@ -26,7 +26,8 @@ Game.prototype.roll = function(){
   console.log('the dice rolled:'+ rollScore);
   if (rollScore === 1){ 
     this.turnScore = 0;
-    // prompt next player to roll
+    this.switchTurn();
+    console.log(this.whoseTurn);
   } else {
     this.turnScore += rollScore;
     $('#roll').text('roll again?');
@@ -35,8 +36,6 @@ Game.prototype.roll = function(){
 
 Game.prototype.hold = function(){
   this.players[0].totalScore += this.turnScore
-  console.log('player1 totalScore is ' + this.players[0].totalScore);
-  console.log(this.whoseTurn);
   this.switchTurn();
   console.log(this.whoseTurn);
 }
