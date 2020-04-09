@@ -76,6 +76,7 @@ $(document).ready(function(){
 
     $('#hold').click(function(){
       game.hold();
+      $('#player1totalScore').text(player1.totalScore);
       //console.log('hold button works')
     });
   })
