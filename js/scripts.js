@@ -27,24 +27,28 @@ Game.prototype.roll = function(){
   if (rollScore === 1){ 
     this.turnScore = 0;
     this.switchTurn();
-    console.log(this.whoseTurn);
+    //console.log(this.whoseTurn);
   } else {
     this.turnScore += rollScore;
     $('#roll').text('roll again?');
   }
 }
 
-Game.prototype.hold = function(){
-  this.players[0].totalScore += this.turnScore
-  this.switchTurn();
-  console.log(this.whoseTurn);
+Game.prototype.hold = function(player){
+  //if(this.whoseTurn = player){
+    this.players[0].totalScore += this.turnScore;
+    this.switchTurn();
+  //} else {
+    //this.players[1].totalScore += this.turnScore;
+    //this.switchTurn();
+    //console.log(this.whoseTurn);
 }
 
 Game.prototype.switchTurn= function(){
   if (this.whoseTurn === 'player1'){
-    this.whoseTurn = 'player2'
+    this.whoseTurn = 'player2';
   }else {
-    this.whoseTurn = 'player1'
+    this.whoseTurn = 'player1';
   }
 }
 
@@ -74,12 +78,13 @@ $(document).ready(function(){
     $('#roll').click(function(){
       game.roll();
       $('#turnPoints').text(game.turnScore);
+      console.log(game,player1,player2);
     });
 
     $('#hold').click(function(){
-      game.hold();
+      game.hold(game.whoseTurn);
       $('#player1totalScore').text(player1.totalScore);
-      game.switchTurn();
+      console.log(game,player1,player2);
     });
   })
 });
