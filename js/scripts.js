@@ -20,7 +20,6 @@ Game.prototype.assignId =function(){
   return this.currentId;
 }
 
-
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
   // if any value >=100 return playerScore and playerName saying 'congratulations, you won'
@@ -30,7 +29,6 @@ Game.prototype.compareScores = function(){
 //back end logic for players
 function Player(name) {
   this.playerName = name;
-  this.playerId = 0;
   this.totalScore = 0;
 }
 
@@ -47,6 +45,7 @@ Player.prototype.turn = function(){
       // ask player to hold or roll again
     }
     this.totalScore += turnScore;
+    game.compareScores();
 }
 
 
@@ -61,9 +60,19 @@ $(document).ready(function(){
     var player2 = new Player(player2name);
     game.addPlayer(player1);
     game.addPlayer(player2);
+    $('#player1name').text(player1name);
+    $('#player2name').text(player2name);
     console.log(game);
     console.log(player1);
     console.log(player2);
+
+    $('#roll').click(function(){
+
+    });
+
+    $('#hold').click(function(){
+
+    });
   })
 });
 
