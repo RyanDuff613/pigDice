@@ -93,6 +93,7 @@ $(document).ready(function(){
       game.hold(game.whoseTurn);
       $('#turnPoints').text(game.turnScore);
       $('#player1totalScore').text(player1.totalScore);
+      $('#player2totalScore').text(player2.totalScore);
       $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
       console.log(game);
     });
