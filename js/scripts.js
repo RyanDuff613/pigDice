@@ -33,9 +33,10 @@ Game.prototype.roll = function(){
   //this.players.playerId/* [#] */.totalScore += this.turnScore;
 }
 
-/* Game.prototype.hold() = function(){
-  this.players[?].totalScore += this.turnScore;
-} */
+Game.prototype.hold = function(){
+  this.players[0].totalScore += this.turnScore
+  console.log(this.players[0].totalScore);
+}
 
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
