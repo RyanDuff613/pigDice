@@ -8,6 +8,7 @@ function Game(){
   this.players = [];
   this.currentId = 0;
   this.turnScore = 0;
+  this.whoseTurn = 'player1';
 }
 
 Game.prototype.addPlayer = function(player){
@@ -34,13 +35,18 @@ Game.prototype.roll = function(){
 
 Game.prototype.hold = function(){
   this.players[0].totalScore += this.turnScore
-  console.log('player[0] totalScore is ' + this.players[0].totalScore);
+  console.log('player1 totalScore is ' + this.players[0].totalScore);
+  console.log(this.whoseTurn);
+  this.switchTurn();
+  console.log(this.whoseTurn);
 }
 
-Game.prototype.compareScores = function(){
-  //write function that evaluates all values held in playerScores array
-  // if any value >=100 return playerScore and playerName saying 'congratulations, you won'
-  // refresh page for new game
+Game.prototype.switchTurn= function(){
+  if (this.whoseTurn === 'player1'){
+    this.whoseTurn = 'player2'
+  }else {
+    this.whoseTurn = 'player1'
+  }
 }
 
 //back end logic for players
@@ -64,20 +70,17 @@ $(document).ready(function(){
     $('#player2name').text(player2name);
     $('#player1totalScore').text(player1.totalScore);
     $('#player2totalScore').text(player2.totalScore);
-    console.log(game);
-    console.log(player1);
-    console.log(player2);
-
+    console.log(game,player1,player2);
+    
     $('#roll').click(function(){
       game.roll();
       $('#turnPoints').text(game.turnScore);
-      //console.log('roll button works')
     });
 
     $('#hold').click(function(){
       game.hold();
       $('#player1totalScore').text(player1.totalScore);
-      //console.log('hold button works')
+      game.switchTurn();
     });
   })
 });
