@@ -15,7 +15,6 @@ Game.prototype.addPlayer = function(player){
 }
 
 
-
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
   // if any value >=100 return playerScore and playerName saying 'congratulations, you won'
@@ -29,14 +28,16 @@ function Player(name) {
   this.totalScore = 0;
 }
 
-Player.prototype.turn = function(player){
+Player.prototype.turn = function(){
     var turnScore;
     var rollScore = dieRoll();
     if (rollScore === 1){ 
       turnScore = 0;
+      console.log(turnScore);
       // prompt next player to roll
     } else {
       turnScore += rollScore;
+      console.log(turnScore);
       // ask player to hold or roll again
     }
     this.totalScore += turnScore;
