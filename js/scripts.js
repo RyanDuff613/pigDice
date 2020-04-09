@@ -47,13 +47,11 @@ Game.prototype.hold = function(playerArrayAddress){
 Game.prototype.switchTurn= function(){
   if (this.whoseTurn === 0){
     this.whoseTurn = 1;
-    this.turnScore = 0;
   }else {
-    this.whoseTurn = 0;
-    this.turnScore = 0;
+    this.whoseTurn = 0; 
   }
+  this.turnScore = 0;
   $('#roll').text(this.players[this.whoseTurn].playerName + "'s roll");
-
 }
 
 //back end logic for players
