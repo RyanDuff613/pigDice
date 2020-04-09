@@ -68,7 +68,7 @@ function Player(name) {
 
 // Front End
 $(document).ready(function(){
-  $("#enterNames").submit(function(event) {
+  $("#inputPanel").submit(function(event) {
     event.preventDefault();
     var game = new Game;
     var player1name = $('#player1').val();
@@ -96,7 +96,7 @@ $(document).ready(function(){
       $('#player2totalScore').text(player2.totalScore);
       $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
     });
-    
+
   })
 });
 

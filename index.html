@@ -12,8 +12,8 @@
       <h1>Play Pig Dice</h1>
 
       <div class="row">
-        <form id="enterNames">
-          <div class="playerInput">
+        <form id="inputPanel">
+          <div class='playerInput'>
             <label for="player1">Player 1</label><br>
             <input type="text" id="player1" placeholder="enter your name">
           </div>
@@ -21,7 +21,7 @@
             <label for="player2">Player 2</label><br>
             <input type="text" id="player2" placeholder="enter your name">
           </div>
-          <button type='submit'>Submit names and play the game!</button>
+          <button id="inputButton" type='submit'>Submit names and play the game!</button>
         </form>
       </div>
 
@@ -41,9 +41,9 @@
       <div class="row">
         <div id="rollPanel">
           <p>total points on this turn: <span id="turnPoints"></span></p>
-          <p>last roll: <span id='diceRoll'></span></span></p>
           <button id='roll' type='submit'>dice</button>
           <button id='hold' type='submit'>hold</button>
+          <p>last roll: <span id='diceRoll'></span></span></p>
         </div>
       </div>
           

@@ -1,20 +1,29 @@
 
-.row {
-  width: 500px;
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: antiquewhite;
 }
 
-#enterNames{
-  margin: 10px;
+.container {
+  background-color: white;
+  width: 500px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+#inputPanel{
   height: 100px;
 }
 
 .playerInput{
-  width: 200px;
+  margin: 10px;
   float: left;
 }
 
-#enterNames button{
-  width: 350px;
+ #inputButton{
+  width: 375px;
+  margin: 10px;
 }
 
 .output{
