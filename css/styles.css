@@ -17,9 +17,14 @@ body {
   height: 100px;
 }
 
-.playerInput{
+#player1input{
+  width: 200px;
   margin: 10px;
   float: left;
+}
+#player2input{
+  margin: 10px;
+  float: right;
 }
 
  #inputButton{
