@@ -20,6 +20,21 @@ Game.prototype.assignId =function(){
   return this.currentId;
 }
 
+Game.prototype.roll = function(){
+  var rollScore = dieRoll();
+  if (rollScore === 1){ 
+    this.turnScore = 0;
+    //console.log(turnScore);
+    // prompt next player to roll
+  } else {
+    this.turnScore += rollScore;
+    //console.log(turnScore);
+    $('#roll').text('roll again?');
+  }
+  this.totalScore += turnScore;
+  game.compareScores();
+}
+
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
   // if any value >=100 return playerScore and playerName saying 'congratulations, you won'
@@ -67,11 +82,13 @@ $(document).ready(function(){
     console.log(player2);
 
     $('#roll').click(function(){
-
+      game.roll();
+      console.log('roll button works')
     });
 
     $('#hold').click(function(){
-
+      game.hold();
+      console.log('hold button works')
     });
   })
 });
