@@ -24,7 +24,6 @@ Game.prototype.assignId =function(){
 Game.prototype.roll = function(){
   var rollScore = dieRoll();
   $('#diceRoll').text(rollScore);
-  console.log('the dice rolled:'+ rollScore);
   if (rollScore === 1){ 
     this.turnScore = 0;
     this.switchTurn();
@@ -33,17 +32,6 @@ Game.prototype.roll = function(){
     $('#roll').text('roll again ' + this.players[this.whoseTurn].playerName +'?');
   }
 }
-/*
-Game.prototype.hold = function(playerArrayAddress){
-  if(this.whoseTurn = playerArrayAddress){
-    this.players[this.whoseTurn].totalScore += this.turnScore;
-    this.switchTurn();
-  } else {
-    this.players[this.whoseTurn].totalScore += this.turnScore;
-    this.switchTurn();
-    //console.log(this.whoseTurn);
-  }
-}*/
 
 Game.prototype.hold = function(playerArrayAddress){
   this.players[playerArrayAddress].totalScore += this.turnScore;
@@ -88,7 +76,7 @@ $(document).ready(function(){
     $('#roll').click(function(){
       game.roll();
       $('#turnPoints').text(game.turnScore);
-      console.log(game);
+      //console.log(game);
     });
 
     $('#hold').click(function(){
@@ -98,7 +86,7 @@ $(document).ready(function(){
       $('#player1totalScore').text(player1.totalScore);
       $('#player2totalScore').text(player2.totalScore);
       $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
-      console.log(game);
+      //console.log(game);
     });
   })
 });
