@@ -8,7 +8,7 @@ function Game(){
   this.players = [];
   this.currentId = 0;
   this.turnScore = 0;
-  this.whoseTurn = 'player1';
+  this.whoseTurn = 0;
 }
 
 Game.prototype.addPlayer = function(player){
@@ -35,20 +35,21 @@ Game.prototype.roll = function(){
 }
 
 Game.prototype.hold = function(player){
-  //if(this.whoseTurn = player){
-    this.players[0].totalScore += this.turnScore;
+  if(this.whoseTurn = player){
+    this.players[this.whoseTurn].totalScore += this.turnScore;
     this.switchTurn();
-  //} else {
-    //this.players[1].totalScore += this.turnScore;
-    //this.switchTurn();
-    //console.log(this.whoseTurn);
+  } else {
+    this.players[this.whoseTurn].totalScore += this.turnScore;
+    this.switchTurn();
+    console.log(this.whoseTurn);
+  }
 }
 
 Game.prototype.switchTurn= function(){
-  if (this.whoseTurn === 'player1'){
-    this.whoseTurn = 'player2';
+  if (this.whoseTurn === 0){
+    this.whoseTurn = 1;
   }else {
-    this.whoseTurn = 'player1';
+    this.whoseTurn = 0;
   }
 }
 
@@ -73,18 +74,18 @@ $(document).ready(function(){
     $('#player2name').text(player2name);
     $('#player1totalScore').text(player1.totalScore);
     $('#player2totalScore').text(player2.totalScore);
-    console.log(game,player1,player2);
+    console.log(game);
     
     $('#roll').click(function(){
       game.roll();
       $('#turnPoints').text(game.turnScore);
-      console.log(game,player1,player2);
+      console.log(game);
     });
 
     $('#hold').click(function(){
       game.hold(game.whoseTurn);
       $('#player1totalScore').text(player1.totalScore);
-      console.log(game,player1,player2);
+      console.log(game);
     });
   })
 });
