@@ -7,11 +7,17 @@ function dieRoll(){
 function Game(){
   this.players = [];
   this.currentId = 0;
+  this.turnScore = 0;
 }
 
 Game.prototype.addPlayer = function(player){
   player.playerId = this.assignId();
   this.players.push(player);
+}
+
+Game.prototype.assignId =function(){
+  this.currentId += 1;
+  return this.currentId;
 }
 
 
@@ -42,16 +48,6 @@ Player.prototype.turn = function(){
     }
     this.totalScore += turnScore;
 }
-
-Player.prototype.hold = function(){
-  //player.currentID.totalScore += turnScore;
-}
-
-Player.prototype.restart = function(){
-
-}
-
-
 
 
 // Front End
