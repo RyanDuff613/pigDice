@@ -8,18 +8,35 @@
     <title>Pig Dice</title>
   </head>
   <body>
-    <h1>Pig Dice</h1>
-    <form id="enterNames">
-      <div class="playerInput">
-        <label for="player1">Player 1</label><br>
-        <input type="text" id="player1" placeholder="enter your name">
+    <div class="container">
+      <h1>Play Pig Dice</h1>
+
+      <div class="row"></div>
+        <form id="enterNames">
+          <div class="playerInput">
+            <label for="player1">Player 1</label><br>
+            <input type="text" id="player1" placeholder="enter your name">
+          </div>
+          <div class="playerInput">
+            <label for="player2">Player 2</label><br>
+            <input type="text" id="player2" placeholder="enter your name">
+          </div>
+        </form>
       </div>
-      <div class="playerInput">
-        <label for="player2">Player 2</label><br>
-        <input type="text" id="player2" placeholder="enter your name">
+
+      <br>
+
+      <div class="row">
+        <div id='gamePanel'>
+          <div class="output" id='player1output'><p>player 1 totals</p>
+
+          </div>
+          <div class='output'><p>player 2 totals</p>
+
+          </div>
+        </div>
       </div>
-    </form>
-    <br>
-    
+
+    </div>
   </body>
 </html>

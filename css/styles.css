@@ -2,3 +2,15 @@
   width: 200px;
   float: left;
 }
+
+.output{
+  width: 200px;
+  float: left;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
+
+#gamePanel{
+  width: 450px;
+}
