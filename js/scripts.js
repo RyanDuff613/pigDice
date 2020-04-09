@@ -27,10 +27,9 @@ Game.prototype.roll = function(){
   if (rollScore === 1){ 
     this.turnScore = 0;
     this.switchTurn();
-    //console.log(this.whoseTurn);
   } else {
     this.turnScore += rollScore;
-    $('#roll').text('roll again?');
+    $('#roll').text('roll again ' + this.players[this.whoseTurn].playerName +'?');
   }
 }
 
@@ -41,7 +40,7 @@ Game.prototype.hold = function(playerArrayAddress){
   } else {
     this.players[this.whoseTurn].totalScore += this.turnScore;
     this.switchTurn();
-    console.log(this.whoseTurn);
+    //console.log(this.whoseTurn);
   }
 }
 
@@ -53,6 +52,8 @@ Game.prototype.switchTurn= function(){
     this.whoseTurn = 0;
     this.turnScore = 0;
   }
+  $('#roll').text(this.players[this.whoseTurn].playerName + "'s roll");
+
 }
 
 //back end logic for players
