@@ -51,7 +51,7 @@ Game.prototype.switchTurn= function(){
     this.whoseTurn = 0; 
   }
   this.turnScore = 0;
-  $('#roll').text(this.players[this.whoseTurn].playerName + "'s roll");
+  //$('#roll').text(this.players[this.whoseTurn].playerName + "'s roll");
 }
 
 //back end logic for players
@@ -75,6 +75,7 @@ $(document).ready(function(){
     $('#player2name').text(player2name);
     $('#player1totalScore').text(player1.totalScore);
     $('#player2totalScore').text(player2.totalScore);
+    $('#roll').text('roll the dice ' + game.players[game.whoseTurn].playerName)
     console.log(game);
     
     $('#roll').click(function(){
@@ -86,6 +87,7 @@ $(document).ready(function(){
     $('#hold').click(function(){
       game.hold(game.whoseTurn);
       $('#player1totalScore').text(player1.totalScore);
+      $('#roll').text(game.players[game.whoseTurn].playerName + "'s roll");
       console.log(game);
     });
   })
