@@ -10,6 +10,7 @@ body {
   border-color: black;
   border-width: 2px;
   border-style: solid;
+  height: 450px;
 }
 
 #inputPanel{
@@ -42,4 +43,11 @@ body {
 
 #rollPanel {
   text-align: center;
+}
+
+#winner {
+  display: none;
+  font-size:30px;
+  font-style: italic;
+  font-weight: bold;
 }

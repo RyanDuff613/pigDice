@@ -52,10 +52,14 @@ Game.prototype.switchTurn= function(){
 }
 
 Game.prototype.endGame= function(){
-  if(this.players[0].totalScore >= 100){
-    alert(this.players[0].playerName + 'is the winner!');
-  }else if(this.players[1].totalScore >=100){
-    alert(this.players[1].playerName + 'is the winner!');
+  if(this.players[0].totalScore >= 10){
+    $('#winnerName').text(this.players[0].playerName);
+    $('#winner').show();
+    //alert(this.players[0].playerName + 'is the winner!');
+  }else if(this.players[1].totalScore >=10){
+    $('#winnerName').text(this.players[1].playerName);
+    $('#winner').show();
+    //alert(this.players[1].playerName + 'is the winner!');
   } else{
   }
 }
