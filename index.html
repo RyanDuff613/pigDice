@@ -11,7 +11,7 @@
     <div class="container">
       <h1>Play Pig Dice</h1>
 
-      <div class="row"></div>
+      <div class="row">
         <form id="enterNames">
           <div class="playerInput">
             <label for="player1">Player 1</label><br>
@@ -28,14 +28,25 @@
 
       <div class="row">
         <div id='gamePanel'>
-          <div class="output" id='player1output'><p>player 1 totals</p>
-
+          <div class="output" id='player1output'>
+            <p>Scoring for player 1: <span id='player1name'></span></p>
+            <p>current score:<span id='player1totalScore'></span></p>
           </div>
-          <div class='output'><p>player 2 totals</p>
-
+          <div class='output'>
+            <p>Scoring for player 2: <span id="player2name"></span></p>
+            <p>current score:<span id='player2totalScore'></span></p>
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <p>total points on this turn: <span id="turnPoints"></span></p>
+        <button type='submit'>roll the dice</button>
+        <button type='submit'>hold</button>
+      </div>
+          
+       
+    </div>
 
     </div>
   </body>
