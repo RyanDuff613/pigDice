@@ -22,19 +22,20 @@ Game.prototype.assignId =function(){
 
 Game.prototype.roll = function(){
   var rollScore = dieRoll();
-  console.log(rollScore);
+  console.log('the dice rolled:'+ rollScore);
   if (rollScore === 1){ 
     this.turnScore = 0;
-    console.log(this.turnScore);
     // prompt next player to roll
   } else {
     this.turnScore += rollScore;
-    console.log(this.turnScore);
     $('#roll').text('roll again?');
   }
-  this.totalScore += this.turnScore;
-  this.compareScores();
+  //this.players.playerId/* [#] */.totalScore += this.turnScore;
 }
+
+/* Game.prototype.hold() = function(){
+  this.players[?].totalScore += this.turnScore;
+} */
 
 Game.prototype.compareScores = function(){
   //write function that evaluates all values held in playerScores array
@@ -47,23 +48,6 @@ function Player(name) {
   this.playerName = name;
   this.totalScore = 0;
 }
-
-Player.prototype.turn = function(){
-    var turnScore;
-    var rollScore = dieRoll();
-    if (rollScore === 1){ 
-      turnScore = 0;
-      console.log(turnScore);
-      // prompt next player to roll
-    } else {
-      turnScore += rollScore;
-      console.log(turnScore);
-      // ask player to hold or roll again
-    }
-    this.totalScore += turnScore;
-    game.compareScores();
-}
-
 
 // Front End
 $(document).ready(function(){
@@ -78,18 +62,21 @@ $(document).ready(function(){
     game.addPlayer(player2);
     $('#player1name').text(player1name);
     $('#player2name').text(player2name);
+    $('#player1totalScore').text(player1.totalScore);
+    $('#player2totalScore').text(player2.totalScore);
     console.log(game);
     console.log(player1);
     console.log(player2);
 
     $('#roll').click(function(){
       game.roll();
-      console.log('roll button works')
+      $('#turnPoints').text(game.turnScore);
+      //console.log('roll button works')
     });
 
     $('#hold').click(function(){
       game.hold();
-      console.log('hold button works')
+      //console.log('hold button works')
     });
   })
 });
