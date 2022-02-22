@@ -79,6 +79,7 @@ $(document).ready(function(){
     var player2 = new Player(player2name);
     game.addPlayer(player1);
     game.addPlayer(player2);
+    $('#turnPoints').text('0')
     $('#player1name').text(player1.playerName);
     $('#player2name').text(player2.playerName);
     $('#player1totalScore').text(player1.totalScore);
@@ -92,7 +93,7 @@ $(document).ready(function(){
 
     $('#hold').click(function(){
       game.hold(game.whoseTurn);
-      $('#turnPoints').text(game.turnScore);
+      $('#turnPoints').text(game.turnScore.toString());
       $('#diceRoll').text('');
       $('#player1totalScore').text(player1.totalScore);
       $('#player2totalScore').text(player2.totalScore);
