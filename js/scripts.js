@@ -58,7 +58,6 @@ Game.prototype.endGame= function(){
   }else if(this.players[1].totalScore >=100){
     $('#winnerName').text(this.players[1].playerName);
     $('#winner').show();
-  } else{
   }
 }
 
